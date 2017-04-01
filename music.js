@@ -124,7 +124,7 @@ var bindMusicList = function() {
 
     })
 }
-
+// 在播放列表里面播放音乐
 var playMusic = function() {
       //如果当前没有在播放歌曲，就点一次主界面的播放按钮
       //但是如果当前在播放歌曲，就先暂停一次，然后再播放
@@ -173,7 +173,7 @@ var bindPreNext = function() {
         var target = event.target
         var nums = Musics.length
         var index = parseInt(player.dataset.index)
-        var offset = parseInt(target.dataset.next)
+        var offset = parseInt(target.dataset.offset)
         var nextI = (nums + index + offset) % nums
         player.dataset.index = nextI
         player.src = musicRoute + Musics[nextI].wholeName
@@ -190,17 +190,32 @@ var changeName = function(index) {
     name.innerHTML = form
 }
 
+var playMode = function(offset) {
+    var next = e('.next')
+    next.dataset.offset = offset
+    bindEvent(player, 'ended', function() {
+        next.click()
+    })
+}
+
 // 改变播放模式
 var changeMode = function() {
-    var mode = e('.mode')
-    bindEvent(mode, 'click', function() {
-        var loop = mode.dataset.loop
-        if (loop == 1) {
-            mode.src = 'img/random.png'
-            mode.dataset.loop = 0
-        } else if (loop ==0) {
-            mode.src = 'img/loop.png'
-            mode.dataset.loop = 1
+    var modeIcon = e('.mode')
+    bindEvent(modeIcon, 'click', function() {
+        var mode = modeIcon.dataset.mode
+        if (mode == 'loop') {
+            modeIcon.src = 'img/random.png'
+            modeIcon.dataset.mode = 'random'
+            var offset = Math.floor(Math.random() * 10)
+            playMode(offset)
+        } else if (mode == 'random') {
+            modeIcon.src = 'img/one.png'
+            modeIcon.dataset.mode = 'one'
+            playMode(0)
+        } else if (mode == 'one') {
+            modeIcon.src = 'img/loop.png'
+            modeIcon.dataset.mode = 'loop'
+            playMode(1)
         }
     })
 }
@@ -212,6 +227,7 @@ var __main = function() {
     bindPlay()
     bindPreNext()
     changeMode()
+    playMode(1)
 }
 
 __main()
