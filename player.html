@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>music player</title>
+    <script src="hs.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+      <div class="bg">
+          <audio id="music" preload="auto" src="music\光GENJI - 勇気100%.mp3" data-index=0></audio>
+          <canvas id="canvas" ></canvas>
+          <img class="canvas-bg"src="img/bg.jpg" alt="">
+          <div class="songname">
+              勇気100% -- 光GENJI 
+          </div>
+          <footer class="foot-player">
+              <img class="mode" src="img/loop.png" data-loop=1 alt="">
+              <img class="pre pn" data-next='-1' src="img/pre.png" alt="">
+              <img class="play" src="img/play.png" alt="" data-state='pause'>
+              <img class="next pn" data-next='1' src="img/next.png" alt="">
+              <img class="list" src="img/list.png" alt="">
+          </footer>
+
+
+          <section class="musicList">
+            <div class="dir">
+                歌曲列表
+            </div>
+					</section>
+      </div>
+      <script src="circle.js"></script>
+      <script src="music.js"></script>
+  </body>
+</html>
