@@ -3,14 +3,17 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
     <title>music player</title>
+    <script src="https://cdn.jsdelivr.net/jquery/1.11.3/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/jquery.roundslider/1.3/roundslider.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/jquery.roundslider/1.3/roundslider.min.js"></script>
     <script src="hs.js"></script>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
       <div class="bg">
           <audio id="music" preload="auto" src="music\光GENJI - 勇気100%.mp3" data-index=0></audio>
-          <canvas id="canvas" ></canvas>
-          <img class="canvas-bg"src="img/bg.jpg" alt="">
+          <div id="slider"></div>
+          <img class="slider-bg"src="img/bg.jpg" alt="">
           <div class="songname">
               勇気100% -- 光GENJI
           </div>

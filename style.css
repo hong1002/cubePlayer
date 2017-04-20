@@ -10,19 +10,20 @@
 img {
     width: 40px;
 }
-canvas {
-    position: absolute;
-    top: 6%;
-    left: 18%;
-    z-index: 2;
-}
-.canvas-bg {
+#slider {
     position: absolute;
     top: 11%;
     left: 23%;
-    width: 250px;
-    height: 250px;
+    z-index: 0;
+}
+.slider-bg {
+    position: absolute;
+    top: 15%;
+    left: 27%;
+    width: 210px;
+    height: 210px;
     border-radius: 50%;
+    z-index: 1;
 }
 .songname {
     position: absolute;
@@ -33,6 +34,7 @@ canvas {
     text-align: center;
     vertical-align: middle;
     color: white;
+    z-index: 2;
 }
 .foot-player {
     position: absolute;
@@ -193,4 +195,24 @@ z-index: 2;
 .hs-listSong-singer {
     width: 32%;
     color: #393939;
+}
+
+.rs-control .rs-range-color {
+    background-color: #d86750;
+}
+.rs-control .rs-path-color {
+    background-color: #24666a;
+}
+.rs-control .rs-handle {
+    background-color: #838383;
+}
+.rs-control .rs-bg-color {
+    background-color: #ff7a5f;
+}
+.rs-container {
+    width: 250px !important;
+    height: 250px !important;
+}
+span.rs-seperator.rs-border {
+    display: none;
 }
